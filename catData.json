@@ -1,0 +1,142 @@
+[
+  {
+    "breed": "LaPerm",
+    "size": "Medium, with males weighing from 7 to 10 pounds and females weighing from 5 to 8 pounds",
+    "coat": "Short or long, soft, wavy",
+    "color": "White, black, blue, red, cream, chocolate, cinnamon, fawn and lavender, plus various patterns and shadings",
+    "description": "Distinguished by her curly, rippled coat and people-oriented personality, the LaPerm is calm and friendly, yet at other times energetic and inquisitive. This feline thrives on attention and likes to be close to her human companions. Though curious, this breed is content to be a lap cat and close to whatever is going on. The LaPerm blossoms with a loving family.",
+    "life_expectancy": 13,
+    "ratings": 4.9,
+    "price": 20000
+  },
+  {
+    "breed": "Savannah",
+    "size": "Large",
+    "coat": "Short, slightly coarse",
+    "color": "Black, brown spotted tabby, black silver spotted tabby, black smoke",
+    "description": "The Savannah Cat's personality is playful, adventurous and loyal. Unlike most cats, she loves to play in water and can even be trained to walk on a leash and play fetch. Don't be fooled by her dog-like personality, though.",
+    "life_expectancy": 20,
+    "ratings": 4.9,
+    "price": 25500
+  },
+  {
+    "breed": "Bengal",
+    "size": "medium to large",
+    "coat": "medium",
+    "color": "Bright orange to light brown, with dark spots or a distinctive marbling pattern",
+    "description": "Bengal Cats are curious and confident with the tameness of a domestic tabby and the beauty of an Asian Leopard Cat. Learn more about Bengals and their playful personality, plus information on their health and how to feed them.",
+    "life_expectancy": 16,
+    "ratings": 4.7,
+    "price": 19000
+  },
+  {
+    "breed": "Scottish Fold",
+    "size": "Medium",
+    "coat": "Longhair — medium-long; shorthair — medium-short, dense, plush",
+    "color": "White, black, blue, red, cream and silver, plus various patterns and shadings",
+    "description": "The smart and friendly Scottish Fold loves playing with challenging, puzzling toys to test her intelligence. She also loves human interaction with her people and loves attention. Scottish Folds prefer the company of their humans or other cats (or cat-friendly dogs), rather than being left alone for hours at a time.",
+    "life_expectancy": 11,
+    "ratings": 4.7,
+    "price": 21500
+  },
+  {
+    "breed": "Manx",
+    "size": "Medium to large",
+    "coat": "Longhair — medium, dense, soft, silky; shorthair — short, dense, glossy",
+    "color": "White, black, blue, red, cream and silver, plus various patterns and shadings",
+    "description": "When she's not hunting bugs or rodents or standing guard, the Manx is an affectionate, even-tempered and playful cat. She loves to follow her favorite person from room to room and curling up on their lap for a snooze. Your Manx will even carry on a conversation with you in her quiet trill.",
+    "life_expectancy": 14,
+    "ratings": 4.6,
+    "price": 18000
+  },
+  {
+    "breed": "American Bobtail",
+    "size": "medium to large",
+    "coat": "short",
+    "color": "White, black, blue, red, cream, chocolate, lavender, cinnamon, fawn, plus various patterns and shadings",
+    "description": "The American Bobtail is an athletic breed that looks like a bobtailed wildcat and has many dog-like tendencies.",
+    "life_expectancy": 13,
+    "ratings": 4.5,
+    "price": 17000
+  },
+  {
+    "breed": "Bombay",
+    "size": "medium",
+    "coat": "short",
+    "color": "black",
+    "description": "The Bombay is an easy-going, yet energetic cat. She does well in quiet apartments where she's the center of attention as well as in lively homes with children and other pets. She'll talk to you in a distinct voice, and you're likely to find her in the warmest spot in your home, whether that's in the sunlight from a window or curled up under the covers in bed with you.",
+    "life_expectancy": 16,
+    "ratings": 4.5,
+    "price": 15000
+  },
+  {
+    "breed": "Cornish Rex",
+    "size": "Small to medium",
+    "coat": "Short, extremely soft and silky",
+    "color": "White, black, blue, red, cream, chocolate, lavender, silver, smoke and tabby, plus various patterns and shadings",
+    "description": "Bat-eared, big-eyed and wavy-coated, the Cornish Rex has a distinctive look and exceptionally silky coat due to not having guard hairs like other breeds. This active cat has a small, whippetlike body and loves to climb, leap and sprint. With kittenlike antics that last a lifetime, this feline likes to be where the action is. The Cornish Rex is perfect for those who want a cat to participate in their family life.",
+    "life_expectancy": 16,
+    "ratings": 4.5,
+    "price": 14000
+  },
+  {
+    "breed": "Peterbald",
+    "size": "Small to medium",
+    "coat": "Hairless",
+    "color": "All colors and/or markings are acceptable",
+    "description": "The elegant naked Peterbald is an athletic breed that looks like she is performing aerial ballet when she plays. This highly intelligent, social feline gets along well with adults, children, dogs, and other pets, but does not like to be left alone for long periods. The Peterbald's curiosity and spirited nature are entertaining, and her affectionate disposition makes her a beloved companion.",
+    "life_expectancy": 12,
+    "ratings": 4.5,
+    "price": 16000
+  },
+  {
+    "breed": "Turkish Angora",
+    "size": "Medium",
+    "coat": "Semi-long",
+    "color": "White, black, blue, cream and red, plus various patterns and shadings",
+    "description": "The Turkish Angora may have been the first longhair cat breed in Europe, and maintains the status of a national treasure in her native country, Turkey.",
+    "life_expectancy": 18,
+    "ratings": 4.5,
+    "price": 21000
+  },
+  {
+    "breed": "Abyssinian",
+    "size": "Small to medium",
+    "coat": "medium",
+    "color": "Ruddy, red, blue, fawn",
+    "description": "Abyssinians are highly intelligent and intensely inquisitive. They love to investigate and will leave no nook or cranny unexplored. They're sometimes referred to as “Aby-grabbys” because they tend to take things that grab their interest. The playful Aby loves to jump and climb. Keep a variety of toys on hand to keep her occupied, including puzzle toys that challenge her intelligence.",
+    "life_expectancy": 15,
+    "ratings": 4.2,
+    "price": 12000
+  },
+  {
+    "breed": "Chartreux",
+    "size": "medium to large",
+    "coat": "medium",
+    "color": "Any shade of blue, from ash to slate",
+    "description": "Often called the smiling cat of France, the Chartreux has a sweet, smiling expression. This sturdy, powerful cat has a distinctive blue coat with a resilient wooly undercoat. Historically known as fine mousers with strong hunting instincts, the Chartreux enjoys toys that move. This is a slow-maturing breed that reaches adulthood in three to five years. A loving, gentle companion, the Chartreux forms a close bond with her family.",
+    "life_expectancy": 12,
+    "ratings": 4.2,
+    "price": 12000
+  },
+  {
+    "breed": "Munchkin",
+    "size": "Small",
+    "coat": "Long or short",
+    "color": "colors and patterns vary",
+    "description": "They may have short legs, but Munchkin Cats don't let it hold them back. Although they can't make big leaps like other breeds, they can make small jumps, climb and even sit back on their haunches to get a better look at something.",
+    "life_expectancy": 15,
+    "ratings": 4.2,
+    "price": 13000
+  },
+  {
+    "breed": "Siamese",
+    "size": "Medium",
+    "coat": "Short, fine, glossy",
+    "color": "Seal point, chocolate point, blue point, lilac point",
+    "description": "Siamese Cats are incredibly social, intelligent and vocal—they'll talk to anyone who wants to listen, and even those who don't. They also play well with other cats, dogs and children. In fact, they thrive on companionship, so it's a good idea to get them a playmate to interact with throughout the day. Although they're active and curious, they also love curling up on their human's lap or snuggling up next to them in bed.",
+    "life_expectancy": 11,
+    "ratings": 4.1,
+    "price": 10000
+  }
+]
