@@ -4,6 +4,7 @@ const CatchAsync = require("./../utils/CatchAsync");
 const AppError = require("./../utils/AppError");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
+const sendEmail = require("./../utils/Email");
 
 function generateToken(id) {
   return jwt.sign({ id }, process.env.SECRET, {
@@ -70,3 +71,29 @@ exports.isloggedin = CatchAsync(async (req, res, next) => {
 });
 
 // Forgot Password?
+exports.forgotpassword = CatchAsync(async (req, res, next) => {
+  const user = await User.findOne(req.body);
+  const resetToken = user.CreatePasswordResetToken();
+  await user.save({ validateBeforeSave: false });
+  const resetURL = `${req.protocol}://${req.get(
+    "host"
+  )}/api/v1/resetPassword/${resetToken}`;
+  const message = `Forgot your password? click on this url ${resetURL} to reset your password. Ignore this email if this is a mistake`;
+  try {
+    const options = {
+      email: user.email,
+      subject: "Reset your password",
+      message,
+    };
+    await sendEmail(options);
+    res.status(200).json({
+      status: "Success",
+      message: "An email is sent to your provided email address",
+    });
+  } catch (err) {
+    user.passwordResetToken = undefined;
+    user.passwordResetTokenExpires = undefined;
+    await user.save({ validateBeforeSave: false });
+    next(new AppError("Failed to send the email", 500));
+  }
+});
