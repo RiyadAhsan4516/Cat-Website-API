@@ -18,7 +18,7 @@ const UserSchema = new mongoose.Schema({
   role: {
     type: String,
     enum: {
-      values: ["user", "admin", "guide", "lead-guide"],
+      values: ["user", "admin", "seller"],
       message: "The role you entered does not exist",
     },
     default: "user",
@@ -54,6 +54,14 @@ UserSchema.pre("save", async function (next) {
   this.confirmPassword = undefined;
   next();
 });
+
+// Check if password was changed:
+UserSchema.methods.wasPasswordchanged = function (jwttimestamp) {
+  if (!this.passwordChangedAt) return false;
+  const changeDate = parseInt(this.passwordChangedAt.getTime() / 1000, 10);
+  if (changeDate > jwttimestamp) return true;
+  else return false;
+};
 
 const UserModel = mongoose.model("Users", UserSchema);
 module.exports = UserModel;

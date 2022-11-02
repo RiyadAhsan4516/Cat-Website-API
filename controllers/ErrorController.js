@@ -10,6 +10,14 @@ function handleDuplicateErrorDB(err) {
   return new AppError(message, 400);
 }
 
+function handleJWTerror(err) {
+  return new AppError("Invalid token please login again", 401);
+}
+
+function handleTokenExpiredError(err) {
+  return new AppError("Token expired please login again", 401);
+}
+
 function devError(err, res) {
   res.status(err.statusCode).json({
     status: err.status,
@@ -50,6 +58,12 @@ module.exports = (err, req, res, next) => {
       prodError(modifiedError, res);
     } else if (err.name === "ValidationError") {
       modifiedError = new AppError(err.message, 400);
+      prodError(modifiedError, res);
+    } else if (err.name === "JsonWebTokenError") {
+      modifiedError = handleJWTerror();
+      prodError(modifiedError, res);
+    } else if (err.name === "TokenExpiredError") {
+      modifiedError = handleTokenExpiredError();
       prodError(modifiedError, res);
     } else {
       prodError(err, res);
