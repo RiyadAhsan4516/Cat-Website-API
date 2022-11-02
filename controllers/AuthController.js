@@ -82,7 +82,7 @@ exports.forgotpassword = CatchAsync(async (req, res, next) => {
   try {
     const options = {
       email: user.email,
-      subject: "Reset your password",
+      subject: "Reset your password (This email is only valid for 5 minutes)",
       message,
     };
     await sendEmail(options);
