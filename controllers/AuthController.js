@@ -97,3 +97,22 @@ exports.forgotpassword = CatchAsync(async (req, res, next) => {
     next(new AppError("Failed to send the email", 500));
   }
 });
+
+// Reset Password:
+exports.resetPassword = CatchAsync(async (req, res, next) => {
+  const hashedToken = crypto
+    .createHash("sha256")
+    .update(req.params.token)
+    .digest("hex");
+  const user = await User.findOne({
+    passwordResetToken: hashedToken,
+    passwordResetTokenExpires: { $gt: Date.now() },
+  });
+  if (!user) return next(new AppError("Your token has expired", 400));
+  const token = generateToken(user.id);
+  res.status(200).json({
+    status: "Success",
+    message: "Password reset successfull",
+    token,
+  });
+});
