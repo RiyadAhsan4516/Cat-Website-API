@@ -12,6 +12,18 @@ function generateToken(id) {
   });
 }
 
+const setCookie = function (res, token) {
+  let secure;
+  process.env.NODE_ENV == "production" ? (secure = true) : (secure = false);
+  res.cookie("jwt", token, {
+    expires: new Date(
+      Date.now() + process.env.JWT_COOKIE_EXPIRES * 24 * 60 * 60 * 100
+    ),
+    secure,
+    httpOnly: true,
+  });
+};
+
 // Signup
 exports.signup = CatchAsync(async (req, res, next) => {
   if (req.body.role && req.body.role == "admin")
@@ -19,6 +31,7 @@ exports.signup = CatchAsync(async (req, res, next) => {
   const newUser = await User.create(req.body);
   newUser.password = undefined;
   const token = generateToken(newUser._id);
+  setCookie(res, token);
   res.status(200).json({
     status: "Success",
     token,
@@ -37,6 +50,7 @@ exports.login = CatchAsync(async (req, res, next) => {
   if (!user || !(await bcrypt.compare(password, user.password)))
     return next(new AppError("Invalid email or password", 401));
   const token = generateToken(user.id);
+  setCookie(res, token);
   res.status(200).json({
     status: "Success",
     message: "You are logged in",
@@ -110,6 +124,7 @@ exports.resetPassword = CatchAsync(async (req, res, next) => {
   });
   if (!user) return next(new AppError("Your token has expired", 400));
   const token = generateToken(user.id);
+  setCookie(res, token);
   res.status(200).json({
     status: "Success",
     message: "Password reset successfull",
@@ -126,6 +141,7 @@ exports.updatePassword = CatchAsync(async (req, res, next) => {
   user.confirmPassword = req.body.confirmPassword;
   await user.save();
   const token = generateToken(user._id);
+  setCookie(res, token);
   res.status(200).json({
     status: "Success",
     message: "Password updated",
