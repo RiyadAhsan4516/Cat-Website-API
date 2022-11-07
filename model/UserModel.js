@@ -56,6 +56,13 @@ UserSchema.pre("save", async function (next) {
   next();
 });
 
+// Updated the passwordChangedAt for updating the password:
+UserSchema.pre("save", function (next) {
+  if (!this.isModified("password") || this.isNew) return next();
+  this.passwordChangedAt = Date.now() - 1000;
+  next();
+});
+
 // Check if password was changed:
 UserSchema.methods.wasPasswordchanged = function (jwttimestamp) {
   if (!this.passwordChangedAt) return false;

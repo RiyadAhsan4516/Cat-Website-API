@@ -18,7 +18,7 @@ exports.signup = CatchAsync(async (req, res, next) => {
     return next(new AppError("You cannot set yourself as admin", 400));
   const newUser = await User.create(req.body);
   newUser.password = undefined;
-  const token = generateToken(newUser.id);
+  const token = generateToken(newUser._id);
   res.status(200).json({
     status: "Success",
     token,
@@ -113,6 +113,22 @@ exports.resetPassword = CatchAsync(async (req, res, next) => {
   res.status(200).json({
     status: "Success",
     message: "Password reset successfull",
+    token,
+  });
+});
+
+// Update password in general:
+exports.updatePassword = CatchAsync(async (req, res, next) => {
+  const user = await User.findById(req.user.id).select("+password");
+  if (!(await bcrypt.compare(req.body.password, user.password)))
+    return next(new AppError("Incorrect password. Please loging again", 401));
+  user.password = req.body.newPassword;
+  user.confirmPassword = req.body.confirmPassword;
+  await user.save();
+  const token = generateToken(user._id);
+  res.status(200).json({
+    status: "Success",
+    message: "Password updated",
     token,
   });
 });
