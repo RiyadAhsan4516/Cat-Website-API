@@ -8,7 +8,7 @@ const sendEmail = require("./../utils/Email");
 
 function generateToken(id) {
   return jwt.sign({ id }, process.env.SECRET, {
-    expiresIn: process.env.JWT_COOKIE_EXPIRES,
+    expiresIn: process.env.EXPIRE,
   });
 }
 
