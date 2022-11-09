@@ -21,6 +21,14 @@ exports.getAllUsers = CatchAsync(async (req, res, next) => {
   });
 });
 
+exports.getUser = CatchAsync(async (req, res, next) => {
+  let user = await User.findById(req.params.id);
+  res.status(200).json({
+    status: "Success",
+    user,
+  });
+});
+
 exports.updateMe = CatchAsync(async (req, res, next) => {
   let user;
   if (req.body.role && req.body.role == "admin")

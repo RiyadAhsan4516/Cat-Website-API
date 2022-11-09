@@ -17,4 +17,6 @@ Router.patch("/updateMe", AuthController.isloggedin, UserController.updateMe);
 Router.get("/deleteMe", AuthController.isloggedin, UserController.deleteMe);
 Router.get("/", AuthController.isloggedin, UserController.getAllUsers);
 
+// Router.route("/:id").get(UserController.getUser);
+
 module.exports = Router;
